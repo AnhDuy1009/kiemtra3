@@ -15,3 +15,6 @@ Route::get('/lothithanhhuonga6-web', function () {
 });
 
 
+Route::get('/phandinhphuc', function () {
+    return 'phandinhphuc';
+});

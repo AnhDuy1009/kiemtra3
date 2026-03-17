@@ -15,3 +15,7 @@ Route::get('/trananhduy', function () {
 Route::get('/lothithanhhuonga6-web', function () {
     return 'lothithanhhuonga6-web';
 });
+
+Route::get('/lothithanhhuonga6', function () {
+    return 'lothithanhhuonga6';
+});

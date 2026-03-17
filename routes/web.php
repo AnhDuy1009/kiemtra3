@@ -19,3 +19,5 @@ Route::get('/lothithanhhuonga6-web', function () {
 Route::get('/lothithanhhuonga6', function () {
     return 'lothithanhhuonga6';
 });
+
+?>

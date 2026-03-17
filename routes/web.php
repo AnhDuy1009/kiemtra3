@@ -10,7 +10,8 @@ Route::get('/nguyennghia-gif', function () {
 Route::get('/trananhduy', function () {
     return 'trananhduy';
 });
-
 Route::get('/lothithanhhuonga6-web', function () {
     return 'lothithanhhuonga6-web';
 });
+
+

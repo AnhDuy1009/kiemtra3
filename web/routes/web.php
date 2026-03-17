@@ -7,3 +7,6 @@ Route::get('/sach-kinh-dien', [BookController::class, 'laySachKinhDien']);
 Route::get('/nguyennghia-gif', function () {
     return 'nguyennghia-gif';
 });
+Route::get('/trananhduy', function () {
+    return 'trananhduy';
+});

@@ -20,4 +20,21 @@ class BookController extends Controller
         $data = DB::select("select * from sach where the_loai = ?", [$id]);
         return view("books.index", compact("data"));
     }
+
+    public function chitiet($id)
+    {
+        // Truy vấn lấy 1 cuốn sách dựa vào ID (Sử dụng tham số ? để chống SQL Injection)
+        $data = DB::select("select * from sach where id = ?", [$id]);
+
+        // DB::select luôn trả về 1 mảng. Nếu mảng rỗng (không tìm thấy sách), báo lỗi 404
+        if (count($data) == 0) {
+            return abort(404);
+        }
+
+        // Lấy phần tử đầu tiên (và duy nhất) trong mảng gán vào biến $book
+        $book = $data[0];
+
+        // Trả về view và truyền biến $book sang
+        return view("books.chitiet", compact("book"));
+    }
 }

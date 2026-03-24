@@ -10,3 +10,6 @@ Route::get('/nguyennghia-gif', function () {
 Route::get('/trananhduy', function () {
     return 'trananhduy';
 });
+Route::get('/books', function () {
+    return view('books.index');
+});

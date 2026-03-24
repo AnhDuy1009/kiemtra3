@@ -3,19 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB; 
+use Illuminate\Support\Facades\DB; // BẮT BUỘC PHẢI THÊM DÒNG NÀY
 
 class BookController extends Controller
 {
-    public function laySachKinhDien()
+    public function index()
     {
-       
-        $sach = DB::table('sach as s')
-            ->join('dm_the_loai as t', 's.the_loai', '=', 't.id')
-            ->select('s.tieu_de', 's.nha_xuat_ban', 's.tac_gia', 's.gia_ban', 's.hinh_anh')
-            ->where('t.ten_the_loai', '=', 'Tác phẩm kinh điển')
-            ->get();
+        // Lấy 8 cuốn rẻ nhất
+        $data = DB::select("select * from sach order by gia_ban asc limit 0,8");
+        return view("books.index", compact("data"));
+    }
 
-        return view('sach_kinh_dien', compact('sach'));
+    public function theloai($id)
+    {
+        // Lấy sách theo thể loại
+        $data = DB::select("select * from sach where the_loai = ?", [$id]);
+        return view("books.index", compact("data"));
     }
 }

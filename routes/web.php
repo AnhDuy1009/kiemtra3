@@ -1,12 +1,20 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BookController;
 
-// Trang chủ: Hiển thị 8 cuốn sách mặc định
-Route::get('/books', [BookController::class, 'index'])->name('book.index');
+Route::get('/', function () {
+    return view('welcome');
+});
 
-// Trang danh mục: Hiển thị sách theo thể loại
-Route::get('/books/theloai/{id}', [BookController::class, 'theloai']);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/books/chitiet/{id}', [\App\Http\Controllers\BookController::class, 'chitiet']);
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';

@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 "Name" : "Họ tên",
 "Email" : "Email",
 "Password" : "Mật khẩu",
@@ -9,6 +10,8 @@
 "Register":"Đăng ký"
 }
 =======
+=======
+>>>>>>> nguyennghia
     "Login": "Đăng nhập",
     "Register": "Đăng ký",
     "Email": "Địa chỉ Email",
@@ -21,5 +24,9 @@
     "Email Password Reset Link": "Gửi liên kết đặt lại mật khẩu",
     "Log in": "Đăng nhập",
     "Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.": "Quên mật khẩu? Không vấn đề gì. Chỉ cần cho chúng tôi biết địa chỉ email của bạn và chúng tôi sẽ gửi cho bạn liên kết đặt lại mật khẩu."
+<<<<<<< HEAD
+}
+>>>>>>> nguyennghia
+=======
 }
 >>>>>>> nguyennghia
